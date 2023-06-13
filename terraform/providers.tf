@@ -14,8 +14,8 @@ terraform {
 
 terraform {
     backend "s3" {
-        bucket = "indval-data-ingestion-code"
-        #dynamodb_table = "terraform-state-lock-db"
+        bucket = "priya-code-bucket"
+        dynamodb_table = "terraform_state_lock_id"
         key = "secure-ingest-tf/terraform_state/tfstate.json"
         region = "us-east-2"
     }

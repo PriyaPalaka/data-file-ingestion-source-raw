@@ -1,0 +1,5 @@
+{
+    "source_bucket": "priya-soure-bucket",
+    "source_folder": "priyamovielens",
+    "target_bucket": "priya-raw-bucket"
+}

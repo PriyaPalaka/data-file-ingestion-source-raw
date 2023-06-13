@@ -1,0 +1,49 @@
+{
+    "data_set / source_system": "movie_lens",
+    "type": "file_ingestion",
+    "schedule": "cron(0 0 * * ? *)",
+    "pipeline": [
+        {
+            "data_asset": "movie_rating",
+            "raw": {
+                "source_bucket": "",
+                "source_folder": "",
+                "target_bucket": "",
+                "partition": "DAY / MONTH / HOUR",
+                "file_pattern": "rating"
+            },
+            "staging": {},
+            "publish": {}
+        },
+        {
+            "data_asset": "genome_scores",
+            "raw": {
+                "source_bucket": "",
+                "source_folder": "",
+                "target_bucket": "",
+                "partition": "DAY / MONTH / HOUR",
+                "file_pattern": "rating"
+            },
+            "staging": {},
+            "publish": {}
+        },
+        {
+            "data_asset": "tags",
+            "raw": {},
+            "staging": {},
+            "publish": {}
+        },
+        {
+            "data_asset": "movie_links",
+            "raw": {},
+            "staging": {},
+            "publish": {}
+        },
+        {
+            "data_asset": "movie_tags",
+            "raw": {},
+            "staging": {},
+            "publish": {}
+        }
+    ]
+}

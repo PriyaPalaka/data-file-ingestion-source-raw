@@ -1,0 +1,89 @@
+{
+    "data_set / source_system": "priyamovielens",
+    "type": "file_ingestion",
+    "schedule": "cron(0 0 * * ? *)",
+    "source_bucket": "priya-soure-bucket",
+    "source_folder": "priyamovielens",
+    "target_bucket": "priya-raw-bucket",
+    "pipeline": [
+        {
+            "data_asset": "movie_rating",
+            "raw": {
+                "source_bucket": "priya-soure-bucket",
+                "source_folder": "priyamovielens",
+                "target_bucket": "priya-raw-bucket",
+                "partition": " MONTH ",
+                "file_pattern": "rating*",
+                "file_type": "csv"
+            },
+            "staging": {},
+            "publish": {}
+        },
+        {
+            "data_asset": "genome_scores",
+            "raw": {
+                "source_bucket": "priya-soure-bucket",
+                "source_folder": "priyamovielens",
+                "target_bucket": "priya-raw-bucket",
+                "partition": "DAY",
+                "file_pattern": "genome_scores*",
+                "file_type": "csv"
+            },
+            "staging": {},
+            "publish": {}
+        },
+        {
+            "data_asset": "genome_tags",
+            "raw": {
+                "source_bucket": "priya-soure-bucket",
+                "source_folder": "priyamovielens",
+                "target_bucket": "priya-raw-bucket",
+                "partition": "YEAR",
+                "file_pattern": "genome_tag*",
+                "file_type": "csv"
+
+            },
+            "staging": {},
+            "publish": {}
+        },
+        {
+            "data_asset": "movie_links",
+            "raw": {
+                "source_bucket": "priya-soure-bucket",
+                "source_folder": "priyamovielens",
+                "target_bucket": "priya-raw-bucket",
+                "partition": "DAY",
+                "file_pattern": "link*",
+                "file_type": "csv"
+            },
+            "staging": {},
+            "publish": {}
+        },
+        {
+            "data_asset": "movie_tags",
+            "raw": {
+                "source_bucket": "priya-soure-bucket",
+                "source_folder": "priyamovielens",
+                "target_bucket": "priya-raw-bucket",
+                "partition": " MONTH ",
+                "file_pattern": "tags",
+                "file_type": "csv"
+            },
+            "staging": {},
+            "publish": {}
+        },
+        {
+            "data_asset": "movies",
+            "raw": {
+                "source_bucket": "priya-soure-bucket",
+                "source_folder": "priyamovielens",
+                "target_bucket": "priya-raw-bucket",
+                "partition": " MONTH ",
+                "file_pattern": "movie",
+                "file_type": "csv"
+            },
+            "staging": {},
+            "publish": {}
+        }
+    ]
+}

@@ -24,8 +24,8 @@ data "aws_iam_policy_document" "cloud_watch_policy" {
     ]
 
     resources = [
-      "arn:aws:logs:us-east-2:817512490234:*",
-      "arn:aws:logs:us-east-2:817512490234:log-group:/aws/lambda/priya-ingest-source-raw:*",
+      "arn:aws:logs:us-east-2:${var.account_number}:*",
+      "arn:aws:logs:us-east-2:${var.account_number}:log-group:/aws/lambda/priya-ingest-source-raw:*"
     ]
   }
 }
@@ -55,6 +55,7 @@ data "aws_iam_policy_document" "s3_policy" {
     resources = ["*"]
   }
 } 
+
 
 resource "aws_iam_role" "iam_for_lambda" {
   name               = "iam_for_lambda"
@@ -93,4 +94,7 @@ resource "aws_sns_topic_subscription" "user_updates_sqs_target" {
   protocol  = "email-json"
   endpoint  = "priyakpalaka@gmail.com"
 }
+
+
+
 
