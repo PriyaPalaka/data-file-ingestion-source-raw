@@ -20,7 +20,7 @@
             "publish": {}
         },
         {
-            "data_asset": "genome_scores",
+            "data_asset": "genome_scores_data",
             "raw": {
                 "source_bucket": "priya-soure-bucket",
                 "source_folder": "priyamovielens",
