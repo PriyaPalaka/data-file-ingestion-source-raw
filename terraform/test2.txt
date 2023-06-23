@@ -1,0 +1,35 @@
+When lambda function is executed it will invoke a glue job with s3 path 
+Glue job will read data from the s3 and write the data into another bucket
+During this process cloudwatch logs should be generated and when it is successfull it should invoke another lambda
+
+
+Resources:
+s3
+lambda-2
+glue
+cloudwatch
+
+Resource communication:
+lambda is communicated with glue 
+lambda is communicated with s3
+glue is communicating with s3
+glue is communicated with s3
+lambda is comunicating with cloudwatch
+cloudwatch is communicating with lambda
+
+iam roles:
+role 1 lambda
+role 2 for glue
+
+iam policies:
+s3 policy
+cloudwatch policy
+
+iam policies and its roles:
+role is attached to s3 policy
+role is attached to glue
+role is attached to  CloudWatch
+
+resource with roles:
+role is attached to lambda function
+lambda is attached to role

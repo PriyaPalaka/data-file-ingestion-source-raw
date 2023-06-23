@@ -16,12 +16,12 @@ The sns_topic_policy policy allows all actions related to Amazon SNS (Simple Not
 These three policies are attached to the role which I mentioned as "assume_role".
 Creating a resoure for the role and the policies.
 
-**1.aws_iam_role**:
+**1.aws_iam_role:**
 
 This resource creates an IAM role named "iam_for_lambda" that will be assumed by the Lambda function.
 The assume_role_policy attribute specifies the trust policy document that allows the Lambda service (lambda.amazonaws.com) to assume this role.
 
-2.aws_iam_policy:
+**2.aws_iam_policy:**
 
 resource creates an IAM policy named "s3_policy" that defines the permissions for interacting with Amazon S3.
 The policy document is obtained from the data.aws_iam_policy_document.s3_policy.

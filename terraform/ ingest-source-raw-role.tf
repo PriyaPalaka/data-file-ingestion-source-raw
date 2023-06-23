@@ -43,18 +43,18 @@ data "aws_iam_policy_document" "s3_policy" {
   }
 }
 
- data "aws_iam_policy_document" "sns_topic_policy" {
-  
+data "aws_iam_policy_document" "sns_topic_policy" {
+
   statement {
     effect = "Allow"
 
     actions = [
       "SNS:*",
-    
+
     ]
     resources = ["*"]
   }
-} 
+}
 
 
 resource "aws_iam_role" "iam_for_lambda" {
@@ -80,14 +80,14 @@ resource "aws_iam_role_policy_attachment" "s3_attachment" {
 
 resource "aws_sns_topic" "creating_topic" {
   name = "priya-data-ingestion-pipeline"
-  
-} 
+
+}
 
 resource "aws_iam_role_policy" "sns_topic_policy" {
-  name = "sns_topic_policy"
+  name   = "sns_topic_policy"
   policy = data.aws_iam_policy_document.sns_topic_policy.json
   role   = aws_iam_role.iam_for_lambda.name
-} 
+}
 
 resource "aws_sns_topic_subscription" "user_updates_sqs_target" {
   topic_arn = aws_sns_topic.creating_topic.arn

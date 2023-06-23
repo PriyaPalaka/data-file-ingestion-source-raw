@@ -8,15 +8,15 @@ terraform {
     random = {
       source  = "hashicorp/random"
       version = ">= 3.0.1"
-      }
+    }
   }
 }
 
 terraform {
-    backend "s3" {
-        bucket = "priya-code-bucket"
-        dynamodb_table = "terraform_state_lock_id"
-        key = "secure-ingest-tf/terraform_state/tfstate.json"
-        region = "us-east-2"
-    }
+  backend "s3" {
+    bucket         = "priya-code-bucket"
+    dynamodb_table = "terraform_state_lock_id"
+    key            = "secure-ingest-tf/terraform_state/tfstate.json"
+    region         = "us-east-2"
+  }
 }

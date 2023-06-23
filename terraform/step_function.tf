@@ -1,3 +1,4 @@
+
 resource "aws_iam_role" "state_machine_role" {
   name               = "state_machine_role"
   assume_role_policy = <<EOF
@@ -17,7 +18,7 @@ EOF
 }
 
 resource "aws_sfn_state_machine" "sfn_state_machine" {
-  name       = "file-ingestion"
+  name       = "state-machine-tf"
   role_arn   = aws_iam_role.state_machine_role.arn
   definition = <<EOF
 {
@@ -52,8 +53,8 @@ resource "aws_sfn_state_machine" "sfn_state_machine" {
 EOF
 }
 
-resource "aws_iam_role_policy" "lambda-execution" {
-  name = "lambda-execution"
+resource "aws_iam_role_policy" "state_machine-policy" {
+  name = "state_machine-policy"
   role = aws_iam_role.state_machine_role.id
 
   policy = <<EOF
@@ -74,8 +75,8 @@ EOF
 }
 
 
-resource "aws_iam_role_policy" "lambda_step_function" {
+/* resource "aws_iam_role_policy" "lambda_step_function" {
   name   = "ingestion_lambda_step_funtion"
   policy = data.aws_iam_policy_document.eb_policy_document.json
   role   = aws_iam_role.state_machine_role.id
-}
+} */

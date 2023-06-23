@@ -1,22 +1,22 @@
 resource "aws_s3_bucket" "priya-soure-bucket" {
-    bucket = "priya-soure-bucket"
-    #region =var.aws_region
+  bucket = "priya-soure-bucket"
+  #region =var.aws_region
   lifecycle {
     prevent_destroy = true
   }
-} 
+}
 
 resource "aws_s3_bucket" "priya-raw-bucket" {
-    bucket = "priya-raw-bucket"
-    #region =var.aws_region
+  bucket = "priya-raw-bucket"
+  #region =var.aws_region
   lifecycle {
     prevent_destroy = true
   }
-} 
+}
 
 resource "aws_s3_bucket" "priya-code-bucket" {
-    bucket = "priya-code-bucket"
-    #region =var.aws_region
+  bucket = "priya-code-bucket"
+  #region =var.aws_region
   lifecycle {
     prevent_destroy = true
   }

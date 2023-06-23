@@ -1,0 +1,24 @@
+resources
+s3
+sns
+lambda
+
+discussions between resources
+s3 is comunicated with lambda
+lambda will comunicated with s3
+sns is comunicated with lambda once it executed it will send emails
+
+iam roles:
+one role is created 
+
+iam policies:
+created a s3 policy 
+created a sns policy
+
+iam policies and roles
+s3 policy is attached to role that we created
+sns policy is attached to role
+
+
+resources with roles:
+role is attached to lambda function

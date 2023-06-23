@@ -3,7 +3,7 @@ variable "aws_region" {
   type        = string
   default     = "us-east-2"
   #region = var.aws_region
-  
+
 }
 
 variable "account_number" {
